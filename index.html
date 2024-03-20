@@ -16,15 +16,23 @@ console.log(typeof null);
 console.log(typeof {});               
 console.log(typeof []);*/
  
-let first = prompt("введи что-то");
-let second = prompt("опять тебе надо ввести  что-то");
-let third = prompt("последний раз что-то");
+// let first = prompt("введи что-то");
+// let second = prompt("опять тебе надо ввести  что-то");
+// let third = prompt("последний раз что-то");
  
-console.log(`${third} ${first} ${second}`);
+// console.log(`${third} ${first} ${second}`);
 
-let number = 12345;
-let result = number.toString().split('').join(' ');
-console.log(result)
+// let number = 12345;
+// let result = number.toString().split('').join(' ');
+// console.log(result)
+    
+let question = prompt("write your name");
+if(question){
+ alert("Hello, "+question+"! How are you? ");
+} else{
+    let result = prompt("you need to write your name")
+    alert(result ?  "Hello, "+result+"! How are you? " : "you didn't enter a name");
+}
     </script>
 </body>
 </html>
