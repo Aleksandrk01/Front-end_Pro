@@ -26,13 +26,24 @@ console.log(typeof []);*/
 // let result = number.toString().split('').join(' ');
 // console.log(result)
     
-let question = prompt("write your name");
-if(question){
- alert("Hello, "+question+"! How are you? ");
-} else{
-    let result = prompt("you need to write your name")
-    alert(result ?  "Hello, "+result+"! How are you? " : "you didn't enter a name");
+// let question = prompt("write your name");
+// if(question){
+//  alert("Hello, "+question+"! How are you? ");
+// } else{
+//     let result = prompt("you need to write your name")
+//     alert(result ?  "Hello, "+result+"! How are you? " : "you didn't enter a name");
+// }
+
+let number = prompt("Введіть тризначне число:");
+
+if (number !== null && number.length === 3) {
+  let allDigitsAreTheSame = number[0] === number[1] && number[1] === number[2];
+  let someDigitsAreTheSame = number[0] === number[1] || number[1] === number[2] || number[0] === number[2];
+  alert("Всі цифри однакові: " + allDigitsAreTheSame);
+  alert("Серед цифр є однакові: " + someDigitsAreTheSame);
+} else {
+  alert("Будь ласка, введіть коректне тризначне число.");
 }
-    </script>
+</script>
 </body>
 </html>
