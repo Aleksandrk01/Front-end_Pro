@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let yearOfBirth = prompt('Який ваш рік народження?');
+        let city = prompt('В якому місці ви живете?');
+        let sport = prompt('Ваш улюбленний вид спорту?');
+        const currentYear = new Date().getFullYear();
+        let age = currentYear - yearOfBirth;
+    
+        // Перевірка на натискання "Скасувати" в одному з промптів
+        if (yearOfBirth === null || city === null || sport === null) {
+            alert('Шкода, що ви не захотіли ввести інформацію');
+        } else {
+            let message = `Вам зараз ${age} років.\n`;
+            if (city === 'Київ' || city === 'Вашингтон' || city === 'Лондон') {
+                message += `Ти живеш у столиці ${city}.`;
+            } else {
+                message += `Ти живеш у місті ${city}.`;
+            }
+            
+            if (sport === 'Теніс') {
+                message += `Круто! Хочеш стати Фан Чжэндон`;
+            } else if(sport === 'Футбол'){
+                message += `Круто! Хочеш стати Криштиа́ну Рона́лд`;
+            } else if (sport === 'Баскетбол'){
+                message += `Круто! Хочеш стати Майкл Джордан`;
+            }
+           
+            alert(message);
+        }
+    </script>
+    
+</body>
+</html>
