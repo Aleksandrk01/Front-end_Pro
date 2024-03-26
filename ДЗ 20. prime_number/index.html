@@ -9,12 +9,23 @@
 <body>
     <script>
         let number = prompt("Будь ласка, введіть ціле число:");
-        
-        if(number > 1 && number % 2){
-            alert(`${number} це просте число `)
-        } else{
-            alert(`${number} це не просте число`)
+        if (number > 1) {
+            let isPrime = true; 
+            for (let i = 2; i <= Math.sqrt(number); i++) { 
+                if (number % i === 0) { 
+                    isPrime = false; 
+                    break;
+                }
+            }
+            if (isPrime) {
+                alert(`${number} це просте число`);
+            } else { 
+                alert(`${number} це не просте число`);
+            }
+        } else {
+            alert(`${number} це не просте число`);
         }
+
     </script>
     
 </body>
