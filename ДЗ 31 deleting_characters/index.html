@@ -8,14 +8,14 @@
 </head>
 <body>
     <script>
-        function getWorld() {
-            let Name = "Hello World";
-            let newName = Name.replace(/l|d/g, "");
-            console.log(newName);
-        }
-
-        getWorld();
-
-    </script>
+function removeCharacters(str, characters) {
+  for (let i = 0; i < characters.length; i++) {
+    let charToRemove = characters[i];
+    str = str.split(charToRemove).join('');
+  }
+  return str;
+}
+console.log(removeCharacters("Hello World", ['l', 'd']));
+</script>
 </body>
 </html>
