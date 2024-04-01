@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   
+function calcNumber(){
+let mixedArray = [5, 10, 'text', true, 15, 20, 'another text', false, 25, 30, null, undefined, 35, 40];
+const numbers = mixedArray.filter(item => typeof  item === 'number' )
+
+let sum = numbers.reduce((accumulator, current) => accumulator + current, 0)
+let average = sum / numbers.length;
+return average;
+}
+console.log(calcNumber())
+</script>
+</body>
+</html>
