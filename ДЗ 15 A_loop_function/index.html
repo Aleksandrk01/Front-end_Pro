@@ -11,14 +11,18 @@
 function number() {
     for (let i = 0; i < 10; i++) {
         let input = prompt("введіть число більше 100");
+        if( !isNaN(input)){
         if (input > 100) {
             console.log(`ви ввели число ${input}`);
             return input;
         } else {
             console.log("ви ввели число менше 100");
         }
+    } else {
+        console.log(`ви ввели не число ${input}`)
+        break
     }
-    console.log("кількість спроб закінчилась");
+} 
 }
 number();
         
