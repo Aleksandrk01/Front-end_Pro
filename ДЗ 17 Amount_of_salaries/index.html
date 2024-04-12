@@ -19,11 +19,23 @@
 
             }
         };
-        
-        for(let kay in company){
-            console.log(`${kay}, ${company[kay]}`)
+        let funSalary = function(){
+           let department = company.sales;   
+           const salarySum = department.map(element => element.salary);
+           const sumvalue = salarySum.reduce((total, sumSalary) => total + sumSalary, 0);
+            console.log(`sales:`,sumvalue)
+            
+            let totalDevelop = 0;
+            for(let kay in company.development){
+            let departments = company.development[kay];
+            const salarys = departments.map(element => element.salary);
+            const sumvalues = salarys.reduce((total, sumSalary) => total + sumSalary, 0);
+            console.log(`development:`,sumvalues)
+            totalDevelop += sumvalues
         }
-         
+        return sumvalue + totalDevelop ;
+        }
+        console.log(funSalary())
     </script>
 </body>
 </html>
