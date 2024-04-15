@@ -10,13 +10,14 @@
     <script>
         let ObjectInfo = {
             name: 'Aleks',
-            age: '20',
-            lives: 'Dnipro'
+            age: 20,
+            lives: 'Dnipro',
+            displayInfo: function(){
+                console.log(this)
+            }
     }; 
-
-    for(const kay in ObjectInfo){
-        console.log(ObjectInfo[kay])
-    }
+    ObjectInfo.displayInfo()
+   
     </script>
 </body>
 </html>
