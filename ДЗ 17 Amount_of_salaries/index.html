@@ -3,39 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dynamic Departments</title>
 </head>
 <body>
     <script>
-        let company = {
-
-            sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600}],
-
+ let coventIt = {
+            sales: [{name: 'John', salary: 10000}, {name: 'Alice', salary: 600}],
             development: {
+                web: {
+                    fullTime: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+                    outStaff: [{name: 'User', salary: 2000}]
+                },
+                qa: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
+                internals: [{name: 'Jack', salary: 1300}]
+            }}
 
-            web: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800}],
-
-            internals: [{name: 'Jack', salary: 1300}]
-
+        function getSum(department) {
+            let totalSalary = 0;
+            if (Array.isArray(department)) {
+                for (const person of department) {
+                    totalSalary += person.salary;
+                }
+            } else {
+                for (const subDep of Object.values(department)) {
+                    totalSalary += getSum(subDep)
+                }
             }
-        };
-        let funSalary = function(){
-           let department = company.sales;   
-           const salarySum = department.map(element => element.salary);
-           const sumvalue = salarySum.reduce((total, sumSalary) => total + sumSalary, 0);
-            console.log(`sales:`,sumvalue)
-            
-            let totalDevelop = 0;
-            for(let kay in company.development){
-            let departments = company.development[kay];
-            const salarys = departments.map(element => element.salary);
-            const sumvalues = salarys.reduce((total, sumSalary) => total + sumSalary, 0);
-            console.log(`development:`,sumvalues)
-            totalDevelop += sumvalues
+            return totalSalary;
         }
-        return sumvalue + totalDevelop ;
-        }
-        console.log(funSalary())
+        console.log(getSum(coventIt))
     </script>
 </body>
 </html>
