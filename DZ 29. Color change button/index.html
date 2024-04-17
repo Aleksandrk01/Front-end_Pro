@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="lorem" style="background: red;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore repellat in vel quasi necessitatibus veritatis
+             repellendus tempora vero nemo! Ex neque laborum adipisci necessitatibus illum blanditiis dolorem cum totam placeat?
+        </p>
+        <button id="buttonColor" >color</button>
+    </div>
+    
+</body>
+<script>  
+let count = 0  
+    let ButtonNewColor = document.getElementById('buttonColor')
+    let colorP = document.getElementById('lorem')
+ 
+    ButtonNewColor.addEventListener('click', function getcolor(){
+       if( colorP.style.background === 'blue'){
+        colorP.style.background = 'red';
+       } else{
+        colorP.style.background = 'blue';
+       }
+       
+
+    })
+</script>
+</html>
