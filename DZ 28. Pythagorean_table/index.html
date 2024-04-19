@@ -17,18 +17,27 @@
             margin: 20px;
         }
     </style>
-    </head>
+</head>
 <body>
     <table>
         <tbody id="tableBody"></tbody>
     </table>
     <script>
-        const size = 10;
+        const size = 11; 
         let tableBody = document.getElementById('tableBody');
-        
-        for(let i = 1; i <= size; i++){
+
+        let headerRow = tableBody.insertRow();
+        headerRow.insertCell().innerHTML = ""; 
+        for (let d = 1; d < size; d++) {
+            let cell = headerRow.insertCell();
+            cell.innerHTML = d;
+        }
+
+        for (let i = 1; i < size; i++) {
             let row = tableBody.insertRow();
-            for(let d = 1; d <= size; d++){
+            let headerCell = row.insertCell(); 
+            headerCell.innerHTML = i;
+            for (let d = 1; d < size; d++) {
                 let cell = row.insertCell();
                 cell.innerHTML = i * d; 
             }
