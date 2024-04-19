@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div_img {
+            height: 200px;
+        }
+        button{
+            padding: 1% 4% 1% 4%;
+            background-color:rgb(66, 135, 191);
+            border: none;
+            border-radius: 5px;
+            color: rgb(243, 243, 243);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        button:hover{
+            background-color:rgb(58, 120, 170);
+
+        }
+    </style>
+</head>
+<body>
+    <button id="buttonimg">img</button>
+    <div>
+<div id="div_img"></div>    
+    </div>
+    
+    <script>
+        let divImg = document.getElementById('div_img');
+        let buttonimg = document.getElementById('buttonimg');
+
+        buttonimg.addEventListener('click', function() {
+            let img = [
+                './img/1.jpeg',
+                './img/2.jpeg',
+                './img/3.jpeg',
+                './img/4.jpeg',
+                './img/5.jpeg',
+                './img/6.jpeg',
+                './img/7.jpeg'
+            ];
+            let indeximg = Math.floor(Math.random() * img.length); 
+            let elementImg = document.createElement('img');
+            elementImg.src = img[indeximg];
+            divImg.appendChild(elementImg);
+        });
+    </script>
+</body>
+</html>
