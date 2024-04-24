@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         button{
+            padding: 1% 4% 1% 4%;
+            background-color:rgb(66, 135, 191);
+            border: none;
+            border-radius: 5px;
+            color: rgb(243, 243, 243);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        button:hover{
+            background-color:rgb(58, 120, 170);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="button_1">кнопка 1</button>
+        <button id="button_2">кнопка 2</button>
+        <button id="button_3">кнопка 3</button>
+    </div>
+    <script>
+        let container = document.getElementById('container');
+
+        container.addEventListener('click', function(event){
+            let clickButton = event.target.innerText;
+            let result = alert(`Клікнуто на кнопці: ${clickButton}`)
+        })
+    </script>
+</body>
+</html>
