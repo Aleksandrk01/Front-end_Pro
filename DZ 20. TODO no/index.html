@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                button{
+            padding: 1% 4% 1% 4%;
+            background-color:rgb(66, 135, 191);
+            border: none;
+            border-radius: 5px;
+            color: rgb(243, 243, 243);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            margin: 2%;
+        }
+        button:hover{
+            background-color:rgb(58, 120, 170);
+
+        }
+        input{
+            padding: 5px 15px 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="ulTable"></ul>
+        <input id="inputAdd" type="text" placeholder="Додати нове завдання"><button id="buttonAdd">Додати</button>
+    </div>
+
+    <script>
+    let container = document.getElementById('container');
+    let ulTable = document.getElementById('ulTable');
+    let buttonAdd = document.getElementById('buttonAdd')
+
+    buttonAdd.addEventListener("click", function (event) {
+        const newButton = document.createElement("button");
+        newButton.textContent = "видалити";
+        
+        let inputAdd = document.getElementById('inputAdd').value;
+        let newText = document.createElement("li");
+        if(event.target.tagName === "BUTTON"){
+            newText.textContent = inputAdd;
+            ulTable.appendChild(newText);
+        };  
+        if (event.target.tagName === "BUTTON") {
+            newText.appendChild(newButton);
+        };
+        newButton.addEventListener('click', function(event){
+            if(event.target.tagName === "BUTTON"){
+                ulTable.removeChild(event.target.parentElement)
+            }
+    });
+    });
+    </script>
+</body>
+</html>
