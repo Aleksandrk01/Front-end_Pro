@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><div>
+    <div class="slider-container">
+        <button class="slide-btn prev" onclick="changeSlide(-1)">Prev</button>
+        <div class="slide" id="slide">
+            <img src="img/1.jpeg" alt="Slide 1">
+            <img src="img/2.jpeg" alt="Slide 2">
+            <img src="img/3.jpeg" alt="Slide 3">
+            <img src="img/4.jpeg" alt="Slide 4">
+            <!-- Додайте стільки зображень, скільки потрібно -->
+        </div>
+        <button class="slide-btn next" onclick="changeSlide(1)">Next</button>
+    </div>
+    <div class="dots-container" id="dots"></div>
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
