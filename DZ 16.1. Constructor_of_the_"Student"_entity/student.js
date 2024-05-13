@@ -1,42 +1,42 @@
-class Студент {
-    constructor(FirstName, LastName, year) {
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.year = year;
-        this.оцінки = [];
-        this.відвідування = new Array(25).fill(null);
-        this.відвідуванняIndex = 0;
+class Student {
+    constructor(firstName, lastName, birthYear) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthYear = birthYear;
+        this.grades = [];
+        this.attendance = new Array(25).fill(null);
+        this.attendanceIndex = 0;
     }
 
-    середній_бал() {
-        if (this.оцінки.length === 0) return 0;
-        return this.оцінки.reduce((sum, value) => sum + value, 0) / this.оцінки.length;
+    averageGrade() {
+        if (this.grades.length === 0) return 0;
+        return this.grades.reduce((sum, value) => sum + value, 0) / this.grades.length;
     }
 
     present() {
-        if (this.відвідуванняIndex < 25) {
-            this.відвідування[this.відвідуванняIndex++] = true;
+        if (this.attendanceIndex < 25) {
+            this.attendance[this.attendanceIndex++] = true;
         }
     }
 
     absent() {
-        if (this.відвідуванняIndex < 25) {
-            this.відвідування[this.відвідуванняIndex++] = false;
+        if (this.attendanceIndex < 25) {
+            this.attendance[this.attendanceIndex++] = false;
         }
     }
 
     summary() {
-        const кількістьВідвідин = this.відвідування.filter(value => value === true).length;
-        const кількістьЗанять = this.відвідування.filter(value => value !== null).length;
-        const відвідуваність = кількістьЗанять ? кількістьВідвідин / кількістьЗанять : 0;
-        const середнійБал = this.середній_бал();
+        const numVisits = this.attendance.filter(value => value === true).length;
+        const numClasses = this.attendance.filter(value => value !== null).length;
+        const attendanceRate = numClasses ? numVisits / numClasses : 0;
+        const avgGrade = this.averageGrade();
 
-        if (середнійБал > 90 && відвідуваність > 0.9) {
-            return "Молодець!";
-        } else if (середнійБал <= 90 || відвідуваність <= 0.9) {
-            return "Добре, але можна краще";
+        if (avgGrade > 90 && attendanceRate > 0.9) {
+            return "Well done!";
+        } else if (avgGrade <= 90 || attendanceRate <= 0.9) {
+            return "Good, but can improve";
         } else {
-            return "Редиска!";
+            return "Needs significant improvement";
         }
     }
 }
@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const output = document.getElementById('output');
 
     document.getElementById('addStudentButton').addEventListener('click', () => {
-        const FirstName = document.getElementById('FirstName').value;
-        const LastName = document.getElementById('LastName').value;
-        const year = parseInt(document.getElementById('year').value, 10);
-        const новийСтудент = new Студент(FirstName, LastName, year);
-        students.push(новийСтудент);
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const birthYear = parseInt(document.getElementById('birthYear').value, 10);
+        const newStudent = new Student(firstName, lastName, birthYear);
+        students.push(newStudent);
         const option = document.createElement('option');
         option.value = students.length - 1;
-        option.textContent = `${FirstName} ${LastName}`;
+        option.textContent = `${firstName} ${lastName}`;
         studentSelect.appendChild(option);
     });
 
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isNaN(grade)) {
             const student = students[studentSelect.value];
             if (student) {
-                student.оцінки.push(grade);
+                student.grades.push(grade);
                 document.getElementById('grade').value = '';
             }
         }
