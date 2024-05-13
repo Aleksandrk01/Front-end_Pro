@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Студентська інформація</title>
+</head>
+<body>
+    <h1>Додати студента</h1>
+    <input type="text" id="FirstName" placeholder="Ім'я" required>
+    <input type="text" id="LastName" placeholder="Прізвище" required>
+    <input type="number" id="year" placeholder="Рік народження" required>
+    <button id="addStudentButton">Додати студента</button>
+
+    <h2>Відвідуваність та оцінки</h2>
+    <select id="studentSelect"></select>
+    <button id="presentButton">Відвідував</button>
+    <button id="absentButton">Пропустив</button>
+    <input type="number" id="grade" placeholder="Оцінка" min="0" max="100">
+    <button id="addGradeButton">Додати оцінку</button>
+    <button id="showSummaryButton">Показати підсумок</button>
+
+    <h2>Інформація про студента</h2>
+    <div id="output"></div>
+
+    <script src="student.js"></script>
+</body>
+</html>
