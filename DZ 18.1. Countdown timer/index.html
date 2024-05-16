@@ -12,13 +12,13 @@
 <div id="clock"></div>
 </body>
 <script>
-let seconds = 90;
+let seconds = 10;
 const clock = setInterval(() =>{
-    seconds--;
     if(seconds <= 0){
         clearInterval(clock);
     }
     document.getElementById('clock').innerText = formatTime(seconds);
+    seconds--;
 }, 1000) 
 function formatTime(timeInSecond){
     let minutes = Math.floor(timeInSecond / 60)
