@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block{
+         border: 1px solid;
+         display: flex;
+         flex-direction: column;
+         flex-wrap: wrap;
+         align-items: center;
+         width: 30%;
+
+        }
+        #update{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Погода</h1>
+    <div id="block"></div>
+    <button id="update">обновить </button>
+    <script>
+        
+        function updateWether(){
+        const NBUResponse =  fetch('https://api.openweathermap.org/data/2.5/weather?q=Dnipro&appid=49facb6a01d9332ba6a806ced14d4b5e&units=metric')
+       NBUResponse.then(response => response.json()).then(data => {
+        const block = document.querySelector('#block')
+        block.innerHTML = `
+       <p>в місті ${data.name}</p>
+        <p>Температура: ${data.main.temp}°C</p>
+        <p>Влажность: ${data.main.humidity}%</p>
+        <p>Скорость ветра: ${data.wind.speed} м/c</p>
+        `
+       })
+    }
+    document.querySelector('#update').addEventListener('click', updateWether)
+     updateWether()  
+      
+    </script>
+</body>
+</html>
