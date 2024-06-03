@@ -1,14 +1,14 @@
 $(document).ready(function() {
     $('#add-task-button').on('click', function() {
-        var modalId = `modal${Math.floor(Math.random() * 1000)}`;
-        var taskText = $('#new-task').val();
+        let modalId = `modal${Math.floor(Math.random() * 1000)}`;
+        let taskText = $('#new-task').val();
         if (taskText) {
-            var taskItem = $('<li id="liList" class="list-group-item d-flex justify-content-between align-items-center"></li>').text(taskText);
-            var deleteButton = $('<button class="btn btn-danger btn-sm">Delete</button>').on('click', function() {
+            let taskItem = $('<li id="liList" class="list-group-item d-flex justify-content-between align-items-center"></li>').text(taskText);
+            let deleteButton = $('<button class="btn btn-danger btn-sm">Delete</button>').on('click', function() {
                 taskItem.remove();
             });
-            var ContentButton = $('<button id="CompleteButton" class="btn btn-success btn-sm mr-2">Content</button>').on('click', function() {                
-                    var newElement = $(`<div class="modal" id="${modalId}">
+            let ContentButton = $('<button id="CompleteButton" class="btn btn-success btn-sm mr-2">Content</button>').on('click', function() {                
+                    let newElement = $(`<div class="modal" id="${modalId}">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
