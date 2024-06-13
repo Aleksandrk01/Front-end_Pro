@@ -1,15 +1,17 @@
 import React from 'react';
 import Header from './components/Header';
-import CharacterList from './components/CharacterList';
+import InputApi from './components/InputApi'
+import InputInfo from './components/InputInfo'
 import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App container ">
       <Header />
       <main>
-        <CharacterList />
+        <InputApi />
       </main>
+      <InputInfo />
     </div>
   );
 };

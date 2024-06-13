@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header>
-      <h1>SWAPI Interface</h1>
+      <h1>SWAPI</h1>
     </header>
   );
 };
